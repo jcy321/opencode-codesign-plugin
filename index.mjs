@@ -139,7 +139,7 @@ This design follows the Open CoDesign methodology with a focus on:
     tool: {
       // Scaffold tool
       scaffold: tool({
-        description: 'Scaffold a new design from a template',
+        description: 'Scaffold a new design from an Open CoDesign template. Creates App.jsx with design tokens and DESIGN.md with design system documentation. Use when user wants to create a design with documented design system.',
         args: {
           template: tool.schema.enum(['minimal-landing', 'bold-campaign', 'dense-dashboard', 'marketing-saas']).describe('Template name'),
           name: tool.schema.string().describe('Project name'),
@@ -195,7 +195,7 @@ This design follows the Open CoDesign methodology with a focus on:
 
       // Check tool
       check: tool({
-        description: 'Check design quality and accessibility',
+        description: 'Check design quality and accessibility of an Open CoDesign generated file. Validates design tokens, semantic HTML, accessibility, responsive design, and real content. Use when user wants to validate a design.',
         args: {
           file: tool.schema.string().describe('Path to App.jsx file'),
         },
@@ -245,7 +245,7 @@ This design follows the Open CoDesign methodology with a focus on:
 
       // Tokens tool
       tokens: tool({
-        description: 'Get design tokens for a visual direction',
+        description: 'Get Open CoDesign design tokens (colors, fonts, spacing, etc.) for a specific visual direction (minimal, bold, dense). Use when user asks about design tokens or color schemes.',
         args: {
           direction: tool.schema.enum(['minimal', 'bold', 'dense']).describe('Visual direction'),
         },
@@ -259,7 +259,7 @@ This design follows the Open CoDesign methodology with a focus on:
 
       // List templates tool
       'list-templates': tool({
-        description: 'List all available design templates',
+        description: 'List all available Open CoDesign templates (minimal-landing, bold-campaign, dense-dashboard, marketing-saas). Use when user asks about available templates or wants to see template options.',
         args: {},
         async execute(args, context) {
           let output = '📚 Available Design Templates:\n\n';
