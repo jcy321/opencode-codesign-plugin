@@ -1,0 +1,24 @@
+# OpenCode CoDesign Plugin
+
+node_modules/
+*.log
+*.tgz
+.DS_Store
+.env
+.env.local
+
+# Development files
+cli.js
+index.js
+mcp-server/
+hooks/
+docs/
+
+# Test files
+test/
+*.test.js
+*.spec.js
+
+# Build artifacts
+dist/
+build/

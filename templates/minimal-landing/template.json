@@ -1,0 +1,25 @@
+{
+  "name": "minimal-landing",
+  "displayName": "Minimal Landing Page",
+  "description": "Clean, minimal landing page with hero section",
+  "direction": "minimal",
+  "tags": ["landing", "minimal", "hero", "marketing"],
+  "files": [
+    "App.jsx",
+    "DESIGN.md"
+  ],
+  "preview": "https://placeholder.com/minimal-landing.png",
+  "features": [
+    "Design tokens system",
+    "Responsive hero section",
+    "Feature grid",
+    "Semantic HTML",
+    "WCAG AA compliant"
+  ],
+  "customization": {
+    "colors": true,
+    "fonts": true,
+    "spacing": true,
+    "components": true
+  }
+}

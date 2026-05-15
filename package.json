@@ -1,0 +1,77 @@
+{
+  "name": "@opencode-ai/codesign",
+  "version": "1.0.0",
+  "description": "Complete OpenCode CoDesign plugin - Design generation with Open CoDesign methodology",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs"
+    }
+  },
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "codesign",
+    "design",
+    "ui",
+    "frontend",
+    "react",
+    "templates"
+  ],
+  "author": "OpenCode CoDesign",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencode-ai/codesign-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencode-ai/codesign-plugin/issues"
+  },
+  "homepage": "https://github.com/opencode-ai/codesign-plugin#readme",
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=1.14.0"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.14.35"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "index.mjs",
+    "templates/",
+    "skill/",
+    "README.md",
+    "LICENSE"
+  ],
+  "opencode": {
+    "plugin": {
+      "id": "codesign",
+      "name": "OpenCode CoDesign",
+      "displayName": "OpenCode CoDesign",
+      "description": "Complete design generation system with skills, tools, and templates",
+      "version": "1.0.0",
+      "tools": [
+        "scaffold",
+        "preview",
+        "check",
+        "tokens",
+        "list-templates"
+      ],
+      "components": {
+        "skill": {
+          "name": "opencode-codesign",
+          "path": "./skill/SKILL.md"
+        },
+        "templates": {
+          "path": "./templates",
+          "count": 4
+        }
+      }
+    }
+  }
+}
