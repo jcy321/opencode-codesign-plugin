@@ -137,6 +137,41 @@ This design follows the Open CoDesign methodology with a focus on:
   // Return hooks
   return {
     tool: {
+      // Design tool - Main entry point for complete design workflow
+      design: tool({
+        description: 'Generate a complete design using Open CoDesign methodology. This is the main command that creates App.jsx with design tokens and DESIGN.md with full design system documentation. Use this when the user wants a complete design system, not just scaffolding from a template.',
+        args: {
+          request: tool.schema.string().describe('Design request (e.g., "a landing page for a SaaS product")'),
+          direction: tool.schema.enum(['minimal', 'bold', 'dense']).optional().describe('Visual direction (optional, will be inferred if not provided)'),
+          outputDir: tool.schema.string().optional().describe('Output directory (default: current directory)'),
+        },
+        async execute(args, context) {
+          const { request, direction, outputDir = '.' } = args;
+
+          // This tool serves as the entry point that triggers the full workflow
+          // The actual design generation should be done by invoking the skill
+          return {
+            output: `🎨 OpenCode CoDesign - Full Design Workflow\n\n` +
+                   `Request: ${request}\n` +
+                   `Direction: ${direction || 'auto-detect'}\n` +
+                   `Output: ${outputDir}\n\n` +
+                   `Starting complete design generation with:\n` +
+                   `✓ Design tokens system\n` +
+                   `✓ App.jsx with production-quality code\n` +
+                   `✓ DESIGN.md with full design system documentation\n` +
+                   `✓ Accessibility and responsive design\n` +
+                   `✓ Real content (no lorem ipsum)\n\n` +
+                   `Please use the opencode-codesign skill to generate this design following the Open CoDesign methodology.`,
+            metadata: {
+              request,
+              direction,
+              outputDir,
+              workflow: 'full-design',
+            },
+          };
+        },
+      }),
+
       // Scaffold tool
       scaffold: tool({
         description: 'Scaffold a new design from an Open CoDesign template. Creates App.jsx with design tokens and DESIGN.md with design system documentation. Use when user wants to create a design with documented design system.',

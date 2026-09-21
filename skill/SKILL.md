@@ -1,12 +1,43 @@
 ---
 name: opencode-codesign
-description: Generate polished, production-grade web designs using Open CoDesign methodology. Creates complete design systems with App.jsx, DESIGN.md, and design tokens. Use when the user asks to design web interfaces, landing pages, dashboards, or complete design systems with documented design rationale.
+description: Generate polished, production-grade web designs using Open CoDesign methodology. Creates complete design systems with App.jsx, DESIGN.md, and design tokens. Use when the user asks to design web interfaces, landing pages, dashboards, or complete design systems with documented design rationale. TRIGGER: User says "use opencode-codesign", "use codesign plugin", "design with Open CoDesign", or explicitly mentions "design tokens", "DESIGN.md", or "design system documentation".
 license: MIT
 ---
 
 # OpenCode CoDesign
 
 An autonomous design partner that creates production-quality web artifacts with complete design systems. Based on Open CoDesign methodology, this skill produces work that looks deliberate, not generated, with real hierarchy, considered color, and meaningful space.
+
+## 🎯 How to Invoke This Skill
+
+### Recommended Ways:
+
+1. **Direct tool call** (most reliable):
+   ```
+   使用 design 工具创建一个 SaaS 产品的落地页
+   ```
+
+2. **Explicit skill mention**:
+   ```
+   用 opencode-codesign skill 设计一个落地页
+   使用 Open CoDesign 方法设计一个仪表板
+   ```
+
+3. **Keyword triggers**:
+   - "设计令牌" / "design tokens"
+   - "DESIGN.md 文档"
+   - "完整的设计系统"
+   - "Open CoDesign 方法"
+
+### Available Tools:
+
+This skill has access to the following plugin tools:
+- **design** - Main entry point for complete design workflow (recommended)
+- **scaffold** - Quick scaffolding from templates
+- **check** - Validate design quality
+- **tokens** - Get design tokens for a direction
+- **list-templates** - List available templates
+- **preview** - Generate preview instructions
 
 ## When to Use This Skill
 

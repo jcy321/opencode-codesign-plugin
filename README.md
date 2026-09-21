@@ -38,30 +38,39 @@ A comprehensive OpenCode plugin that brings the [Open CoDesign](https://github.c
 
 ## 📦 Installation
 
-### Using OpenCode CLI
+### Quick Install (Recommended)
 
 ```bash
-# Install the plugin
-opencode plugin @opencode-ai/codesign
-
-# Or install globally first
-npm install -g @opencode-ai/codesign
-opencode plugin @opencode-ai/codesign
-```
-
-### Manual Installation
-
-```bash
-# Clone the repository
+# Clone or download the plugin
 git clone https://github.com/opencode-ai/codesign-plugin.git
 cd codesign-plugin
 
-# Install dependencies
-npm install
+# Run the installation script
+./install.sh
+```
 
-# Link to OpenCode
-cd ~/.config/opencode
-npm install /path/to/codesign-plugin
+This will:
+1. Install the plugin (tools)
+2. Install the skill (enables `/codesign` slash command)
+3. Configure OpenCode
+
+### Manual Installation
+
+#### Step 1: Install Plugin
+
+```bash
+# Install globally
+npm install -g @opencode-ai/codesign
+
+# Add to OpenCode
+opencode plugin @opencode-ai/codesign
+```
+
+#### Step 2: Install Skill (for `/codesign` command)
+
+```bash
+# Copy skill to OpenCode skills directory
+cp -r ./skill ~/.config/opencode/skills/codesign
 ```
 
 Then add to your `~/.config/opencode/opencode.json`:
@@ -74,34 +83,88 @@ Then add to your `~/.config/opencode/opencode.json`:
 }
 ```
 
+📖 **详细安装说明请查看 [INSTALL.md](./INSTALL.md)**
+
 ---
 
 ## 🚀 Quick Start
 
-### Using Design Tools
+> **💡 重要提示**：为了确保调用此插件而不是其他 skill，请查看 [完整使用指南 (USAGE.md)](./USAGE.md)
 
-Once installed, the tools are available in OpenCode conversations:
+### Method 1: Slash Command (Most Direct) 🌟
+
+After installation, use the `/codesign` slash command:
 
 ```bash
 # Start OpenCode
 opencode
 
-# Use the tools in conversation:
-> scaffold a minimal landing page called "Product Launch"
-> check the design quality of App.jsx
-> show me the design tokens for bold direction
-> list all available design templates
+# Use the slash command:
+> /codesign 创建一个 SaaS 产品的落地页
+> /codesign create a landing page for my AI startup
+> /codesign 设计一个数据仪表板，要信息密集型
 ```
 
-### Using the Skill
+**Why this is best:**
+- ✅ Most direct way to invoke the plugin
+- ✅ Won't be intercepted by other skills
+- ✅ Triggers complete Open CoDesign workflow
+- ✅ Auto-generates App.jsx + DESIGN.md
+
+### Method 2: Using the Design Tool
+
+The **design** tool is the main entry point for the complete OpenCode CoDesign workflow:
 
 ```bash
-opencode run "design a landing page for a SaaS product using opencode-codesign"
+# Use the design tool for complete workflow:
+> 使用 design 工具创建一个 SaaS 产品的落地页
+> use the design tool to create a landing page for my startup
+> 用 design 工具设计一个仪表板
 ```
 
 **Output:**
 - `App.jsx` - Complete React component with design tokens
 - `DESIGN.md` - Full design system documentation
+
+### Method 3: Using the Skill Directly
+
+```bash
+# Explicitly mention the skill:
+> 用 opencode-codesign skill 设计一个落地页
+> use opencode-codesign to design a dashboard
+
+# Or mention key features:
+> 创建一个带有设计令牌和 DESIGN.md 的落地页
+> design a page with design tokens and design system documentation
+```
+
+### Method 4: Using Individual Tools
+
+Once installed, the tools are available in OpenCode conversations:
+
+```bash
+# Scaffold from template
+> scaffold a minimal landing page called "Product Launch"
+
+# Check design quality
+> check the design quality of App.jsx
+
+# Get design tokens
+> show me the design tokens for bold direction
+
+# List templates
+> list all available design templates
+```
+
+### Why Multiple Methods?
+
+- **`/codesign` slash command**: Most direct, can't be missed
+- **design tool**: Best for complete, custom designs with full workflow
+- **Skill mention**: When you want to ensure the Open CoDesign methodology is used
+- **scaffold tool**: Quick start from pre-built templates
+- **Other tools**: Specific tasks like checking quality or getting tokens
+
+📖 **详细使用说明请查看 [USAGE.md](./USAGE.md)**
 
 ---
 
